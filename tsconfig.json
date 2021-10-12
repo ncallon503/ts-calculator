@@ -16,6 +16,7 @@
   "typedocOptions": {
     "name": "Four Function Calculator",
     "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
     "out": "docs"
   }
 }
