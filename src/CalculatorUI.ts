@@ -1,4 +1,4 @@
-import { Calculator, Op } from './Calculator';
+import { Calculator, Op } from "./Calculator";
 
 /**
  * The UI logic for the calculator interface, which just updates the HTML

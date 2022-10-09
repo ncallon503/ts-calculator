@@ -20,7 +20,7 @@ export enum Op {
   /**
    * Division.
    */
-  Div
+  Div,
 }
 
 /**
@@ -66,7 +66,7 @@ export class Calculator {
    * previous result or operation, and overwrite mode is enabled.
    */
   constructor() {
-    this.lcd = '0';
+    this.lcd = "0";
     this.arg = null;
     this.lastOp = null;
     this.overwrite = true;
@@ -91,10 +91,11 @@ export class Calculator {
    */
   decimal(): void {
     if (this.overwrite) {
-      this.lcd = '0.';
+      this.lcd = "0.";
       this.overwrite = false;
-    } else if (this.lcd.indexOf('.') === -1) { // don't allow more than one '.'
-      this.lcd += '.';
+    } else if (this.lcd.indexOf(".") === -1) {
+      // don't allow more than one '.'
+      this.lcd += ".";
     }
   }
 
@@ -103,13 +104,12 @@ export class Calculator {
    */
   negate(): void {
     if (this.overwrite) {
-      this.lcd = '0';
+      this.lcd = "0";
       this.overwrite = false;
-    } else if (this.lcd !== '0') { // don't negate '0'
-      if (this.lcd.charAt(0) === '-')
-        this.lcd = this.lcd.substring(1);
-      else
-        this.lcd = '-' + this.lcd;
+    } else if (this.lcd !== "0") {
+      // don't negate '0'
+      if (this.lcd.charAt(0) === "-") this.lcd = this.lcd.substring(1);
+      else this.lcd = "-" + this.lcd;
     }
   }
 
@@ -121,15 +121,25 @@ export class Calculator {
    */
   op(o: Op): void {
     this.overwrite = true;
-    if (this.arg === null || this.repeat) { // if this is the first argument
+    if (this.arg === null || this.repeat) {
+      // if this is the first argument
       this.lastOp = o;
       this.arg = parseFloat(this.lcd);
-    } else { // if this is the second argument
+    } else {
+      // if this is the second argument
       switch (this.lastOp) {
-        case Op.Add: this.lcd = (this.arg + parseFloat(this.lcd)).toString(); break;
-        case Op.Sub: this.lcd = (this.arg - parseFloat(this.lcd)).toString(); break;
-        case Op.Mul: this.lcd = (this.arg * parseFloat(this.lcd)).toString(); break;
-        case Op.Div: this.lcd = (this.arg / parseFloat(this.lcd)).toString(); break;
+        case Op.Add:
+          this.lcd = (this.arg + parseFloat(this.lcd)).toString();
+          break;
+        case Op.Sub:
+          this.lcd = (this.arg - parseFloat(this.lcd)).toString();
+          break;
+        case Op.Mul:
+          this.lcd = (this.arg * parseFloat(this.lcd)).toString();
+          break;
+        case Op.Div:
+          this.lcd = (this.arg / parseFloat(this.lcd)).toString();
+          break;
       }
       this.lastOp = o;
       this.arg = parseFloat(this.lcd);
@@ -155,26 +165,27 @@ export class Calculator {
     // This doesn't matter in the + and * cases because the result is the same
     // either way.
     switch (this.lastOp) {
-      case Op.Add: this.lcd = (this.arg + parseFloat(this.lcd)).toString(); break;
+      case Op.Add:
+        this.lcd = (this.arg + parseFloat(this.lcd)).toString();
+        break;
       case Op.Sub:
         if (this.repeat)
           this.lcd = (parseFloat(this.lcd) - this.arg).toString();
-        else
-          this.lcd = (this.arg - parseFloat(this.lcd)).toString();
+        else this.lcd = (this.arg - parseFloat(this.lcd)).toString();
         break;
-      case Op.Mul: this.lcd = (this.arg * parseFloat(this.lcd)).toString(); break;
+      case Op.Mul:
+        this.lcd = (this.arg * parseFloat(this.lcd)).toString();
+        break;
       case Op.Div:
         if (this.repeat)
           this.lcd = (parseFloat(this.lcd) / this.arg).toString();
-        else
-          this.lcd = (this.arg / parseFloat(this.lcd)).toString();
+        else this.lcd = (this.arg / parseFloat(this.lcd)).toString();
         break;
     }
 
     // If `repeat` is disabled, we need to save the previous value of the screen
     // to use it as the second argument when repeating the operation.
-    if (!this.repeat)
-      this.arg = oldLcd;
+    if (!this.repeat) this.arg = oldLcd;
 
     this.repeat = true;
     this.overwrite = true;
@@ -190,7 +201,7 @@ export class Calculator {
       this.lastOp = null;
       this.repeat = false;
     }
-    this.lcd = '0';
+    this.lcd = "0";
     this.overwrite = true;
   }
 }
