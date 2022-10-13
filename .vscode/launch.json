@@ -6,7 +6,7 @@
       "preLaunchTask": "npm: build",
       "type": "pwa-chrome",
       "request": "launch",
-      "file": "${workspaceFolder}/html/index.html",
+      "file": "${workspaceFolder}/build/index.html",
       "outFiles": [
         "${workspaceFolder}/build/*.js"
       ],
@@ -17,7 +17,7 @@
       "type": "pwa-msedge",
       "preLaunchTask": "npm: build",
       "request": "launch",
-      "file": "${workspaceFolder}/html/index.html",
+      "file": "${workspaceFolder}/build/index.html",
       "outFiles": [
         "${workspaceFolder}/build/*.js"
       ],
