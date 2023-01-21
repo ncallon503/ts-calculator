@@ -10,7 +10,6 @@ The setup process is the same for all the code projects in this course, as expla
 
 There are some `npm` scripts set up for this project, which you can run in any terminal environment with `npm` installed.
 
-- `npm run format` runs Prettier on the project, reformatting source files in place.
 - `npm run lint` runs ESLint on the project, reporting warnings and errors in the console.
 - `npm run docs` builds the HTML documentation for the project, outputting to the `docs/` folder.
 - `npm run build` builds the project, outputting to the `build/` folder.
