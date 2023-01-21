@@ -21,4 +21,4 @@ window.onload = () => {
   document.getElementById('/').onclick = () => calcUI.op(Op.Div);
   document.getElementById('=').onclick = () => calcUI.equals();
   document.getElementById('C').onclick = () => calcUI.clear();
-}
+};
