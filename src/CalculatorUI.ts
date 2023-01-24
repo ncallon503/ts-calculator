@@ -11,6 +11,7 @@ export class CalculatorUI extends Calculator {
    */
   lcdDisplay: HTMLElement;
 
+  
   constructor(id: string) {
     super();
     this.lcdDisplay = document.getElementById(id);
