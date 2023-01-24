@@ -1,6 +1,6 @@
 # Four-Function Calculator
 
-This is a simple four-function calculator (addition, subtraction, multiplication, and division). It may later be expanded to support more operations and to support multiple different calculator instances on the same page.
+This is a simple four-function calculator (addition, subtraction, multiplication, and division). It may later be expanded to support more operations and to support multiple different calculator instances on the same page..
 
 ## Setup
 
