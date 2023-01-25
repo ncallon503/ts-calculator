@@ -11,7 +11,6 @@ export class CalculatorUI extends Calculator {
    */
   lcdDisplay: HTMLElement;
 
-  
   constructor(id: string) {
     super();
     this.lcdDisplay = document.getElementById(id);
@@ -45,6 +44,16 @@ export class CalculatorUI extends Calculator {
 
   clear(): void {
     super.clear();
+    this.lcdDisplay.innerHTML = this.lcd.toString();
+  }
+
+  percent(): void {
+    super.percent();
+    this.lcdDisplay.innerHTML = this.lcd.toString();
+  }
+
+  squared(): void {
+    super.squared();
     this.lcdDisplay.innerHTML = this.lcd.toString();
   }
 }

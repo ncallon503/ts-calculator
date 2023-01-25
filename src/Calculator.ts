@@ -86,7 +86,6 @@ export class Calculator {
     }
   }
 
-
   /**
    * Input a decimal point.
    */
@@ -99,9 +98,7 @@ export class Calculator {
     }
   }
 
-
-  negate(): void
-  {
+  negate(): void {
     if (this.overwrite) {
       this.lcd = '0';
       this.overwrite = false;
@@ -192,5 +189,23 @@ export class Calculator {
     }
     this.lcd = '0';
     this.overwrite = true;
+  }
+
+  /**
+   * Takes the current number on the lcd display and multiplies it by 0.01.
+   */
+  percent(): void {
+    if (this.lcd !== '0') { // optional, but no point in multiplying '0' by 0.01
+      this.lcd = (parseFloat(this.lcd) * 0.01).toString();
+    }
+  }
+
+  /**
+   * Takes the current number on the lcd display and squares it.
+   */
+  squared(): void {
+    if (this.lcd !== '0') { // optional, but no point in multiplying '0' by itself
+      this.lcd = (parseFloat(this.lcd) * parseFloat(this.lcd)).toString();
+    }
   }
 }

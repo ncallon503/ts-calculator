@@ -55,7 +55,7 @@
         ],
         "func-call-spacing": "off",
         "@typescript-eslint/func-call-spacing": ["warn", "never"],
-        "linebreak-style": ["error", "unix"],
+        "linebreak-style": ["error", "windows"],
         "no-alert": ["warn"],
         "no-array-constructor": ["error"],
         "no-caller": ["error"],
